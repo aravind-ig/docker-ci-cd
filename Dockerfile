@@ -15,4 +15,4 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
 
 RUN curl -sL https://firebase.tools | bash
 
-RUN snap install flutter --classic
+# RUN snap install flutter --classic
