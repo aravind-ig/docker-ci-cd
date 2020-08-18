@@ -14,10 +14,8 @@ RUN java -version
 # Download & Install Node JS
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
     apt-get update -y && apt-get install -y nodejs && \
-    npm install -g @angular/cli
-
-# Download & Install Firebase CLI
-RUN curl -sL https://firebase.tools | bash
+    npm install -g @angular/cli && \
+    npm install -g firebase-tools
 
 # Download & Install Android SDK
 ENV SDK_URL="https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip" \
