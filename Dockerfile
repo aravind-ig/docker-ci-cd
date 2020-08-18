@@ -20,7 +20,7 @@ RUN curl -sL https://firebase.tools | bash
 # Download & Install Android SDK
 ENV SDK_URL="https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip" \
     ANDROID_HOME="/usr/local/android-sdk" \
-    ANDROID_VERSION=28 \
+    ANDROID_VERSION=29 \
     ANDROID_BUILD_TOOLS_VERSION=29.0.2 \
     REPO_OS_OVERRIDE=linux
 # Download Android SDK
