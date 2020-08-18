@@ -7,8 +7,10 @@ RUN apt-get update -y && apt-get upgrade -y
 
 RUN echo "Etc/UTC" > /etc/timezone
 
-RUN apt-get install -y --fix-missing wget curl gnupg git file apt-utils nano zip unzip build-essential openssh-client rsync sudo snapd apt-transport-https openjdk-8-jre
-
+RUN apt-get install -y --fix-missing wget curl gnupg git file apt-utils nano zip unzip build-essential openssh-client rsync sudo snapd apt-transport-https openjdk-8-jre openjdk-8-jdk
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+ENV PATH=$PATH:$JAVA_HOME/bin
+RUN java -version
 # Download & Install Node JS
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
     apt-get update -y && apt-get install -y nodejs && \
