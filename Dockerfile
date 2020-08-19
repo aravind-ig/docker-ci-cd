@@ -43,3 +43,4 @@ RUN $ANDROID_HOME/cmdline-tools/tools/bin/sdkmanager "build-tools;${ANDROID_BUIL
 RUN git clone https://github.com/flutter/flutter.git -b stable --depth 1
 ENV PATH="/flutter/bin:${PATH}"
 RUN yes | flutter doctor --android-licenses && flutter doctor
+RUN flutter precache
