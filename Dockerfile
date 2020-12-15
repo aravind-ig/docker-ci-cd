@@ -13,7 +13,7 @@ ENV PATH=$PATH:$JAVA_HOME/bin
 RUN java -version
 
 # Download & Install Node JS
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
     apt-get update -y && apt-get install -y nodejs && \
     npm install -g @angular/cli && \
     npm install -g firebase-tools
@@ -58,7 +58,7 @@ RUN $ANDROID_HOME/cmdline-tools/tools/bin/sdkmanager "build-tools;27.0.0" \
 RUN $ANDROID_HOME/cmdline-tools/tools/bin/sdkmanager --list
 
 # Install flutter
-RUN git clone https://github.com/flutter/flutter.git -b stable --depth 1
+RUN git clone https://github.com/flutter/flutter.git -b dev --depth 1
 ENV PATH="/flutter/bin:${PATH}"
 RUN yes | flutter doctor --android-licenses && flutter doctor
 RUN flutter precache
