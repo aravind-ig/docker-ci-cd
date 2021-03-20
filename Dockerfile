@@ -58,9 +58,8 @@ RUN $ANDROID_HOME/cmdline-tools/tools/bin/sdkmanager "build-tools;27.0.0" \
 RUN $ANDROID_HOME/cmdline-tools/tools/bin/sdkmanager --list
 
 # Install flutter
-RUN git clone https://github.com/flutter/flutter.git --depth 1
-ENV PATH="/flutter/bin:${PATH}"
+RUN git clone https://github.com/flutter/flutter.git -b stable --depth 1
+ENV PATH="$PATH:`pwd`/flutter/bin"
 RUN yes | flutter doctor --android-licenses && flutter doctor
-RUN flutter channel stable
 RUN flutter upgrade
 RUN flutter precache
