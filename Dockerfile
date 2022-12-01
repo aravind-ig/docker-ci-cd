@@ -13,7 +13,7 @@ ENV PATH=$PATH:$JAVA_HOME/bin
 RUN java -version
 
 # Download & Install Node JS
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
     apt-get update -y && apt-get install -y nodejs && \
     npm install -g @angular/cli && \
     npm install -g firebase-tools
